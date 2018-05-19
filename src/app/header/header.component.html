@@ -1,0 +1,148 @@
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" routerLink="/">BOOK A COURSE</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li routerLinkActive="active">
+        <a routerLink="/home">Home</a>
+     </li>
+
+     <div class="dropdown glyphicon ">
+      <button class="btn btn-info dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Courses
+      <span class="caret"></span></button>
+      <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+        <li role="presentation"><a role="menuitem" tabindex="-1" routerLink="/course-one">Full-stack Web Development</a></li>
+        <li role="presentation"><a role="menuitem" tabindex="-1" routerLink="/course-two">Mobile App Development</a></li>
+        <li role="presentation"><a role="menuitem" tabindex="-1" routerLink="/course-three">UI UX Design</a></li>
+      </ul>
+    </div>
+  
+      <!--<li routerLinkActive="active">
+        <a routerLink="/course-one">Course 1</a>
+      </li>
+      <li routerLinkActive="active">
+        <a routerLink="/course-two">Course 2</a>
+      </li>
+      <li routerLinkActive="active">
+        <a routerLink="/course-three">Course 3</a>
+      </li>-->
+    </ul>
+
+    <ul class="nav navbar-nav navbar-right">
+      <li data-toggle="modal" data-target="#myModal2">
+        <a href="#">
+          <span class="glyphicon glyphicon-user"></span> Sign Up</a>
+      </li>
+      <li data-toggle="modal" data-target="#myModal">
+        <a href="#">
+          <span class="glyphicon glyphicon-log-in"></span> Login</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Login</h4>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" [(ngModel)]="email_addy" class="form-control">
+        </div>
+        <div class="form-group">
+          <label>Password</label>
+          <input type="password" [(ngModel)]="pwd" class="form-control">
+        </div>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox"> Remember me</label>
+        </div>
+        <div class="text-danger">
+      <strong> {{error}} </strong>
+        </div>
+<br>
+    <button type="button" (click)="validateform()" class="btn btn-success" data-dismiss="modal">Submit</button>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- Modal -->
+<div id="myModal2" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Sign Up</h4>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label>First Name</label>
+          <input type="text" [(ngModel)]="user.name.fname" placeholder="roseline" class="form-control">
+        </div><div class="form-group">
+          <label>Last Name</label>
+          <input type="text" [(ngModel)]="user.name.lname" placeholder="braide" class="form-control">
+        </div><div class="form-group">
+          <label>Email</label>
+          <input type="email" [(ngModel)]="user.email" placeholder="rosebraide@example.com" class="form-control">
+        </div>
+        <div class="form-group">
+          <label>Phone</label>
+          <input type="tel" [(ngModel)]="user.phone" placeholder="0703343434" class="form-control">
+        </div>
+
+        <div class="form-group">
+          <label>Password</label>
+          <input [(ngModel)]="user.password" (keyup)="check_password_strength()" type="password" class="form-control" >
+          <span [class.text-danger]="text_color==1" [class.text-warning]="text_color==2" [class.text-success]="text_color==3" ><strong>{{strength}}</strong></span>
+        </div>
+
+        <div class="form-group">
+          <label>Confirm Password</label>
+          <input [(ngModel)]="user.confirm_password" type="password" class="form-control">
+        </div>
+
+        <div class="form-group">
+          <label>Preferred Path</label>
+          <select [(ngModel)]="user.path" class="form-control">
+            <option disabled>Select a path</option>
+            <option>Design</option>
+            <option>Mobile App Development</option>
+            <option>Full Stack Development</option>
+          </select>
+        </div>
+
+        <div class="checkbox">
+          <label>
+            <input type="checkbox"> Remember me</label>
+        </div>
+
+        <button type="button" (click)="register()"class="btn btn-success" data-dismiss="modal">Submit</button>
+        <br>
+        <em><strong><span class="text-danger">{{error}}</span></strong></em>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>

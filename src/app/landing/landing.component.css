@@ -1,0 +1,60 @@
+.full-back{
+    background-image: url("C:\Users\Obekpa\Desktop\puzzle.jpg");
+    background-size: cover;
+
+}
+
+.mySize{
+    min-height: 700px;
+    color: whitesmoke;
+}
+.make-white {
+    color: white;
+    min-height: 700px;
+}
+
+.blink_me {
+    animation: blinker 1s linear infinite;
+  }
+
+/* class from stackoverflow to make text blink */
+.blink_me {
+    animation: blinker 1s linear infinite;
+  }
+
+  @keyframes blinker {
+    50% {
+      opacity: 0;
+    }
+  }
+ .second{
+ /* background-image: url("C:\Users\Obekpa\Desktop\web-app.jpg"); */
+ background-color: black;
+    background-size: cover;
+  
+  }
+
+  .second p{
+    font-size:15px;
+  }
+  .third{
+    background-image: url("C:\Users\Obekpa\Desktop\web-app.jpg");
+    background-size:cover;
+  }
+  img{
+    width:200px;
+    height:200px;
+  }
+  .text-block{
+    position: absolute;
+    opacity:0.9;
+    background-color:black;
+    color:white;
+    padding-top: 200px;
+    padding-bottom: 200px;
+    height: 650px;
+    width: 1100px;
+  }
+  .text-block p{
+    font-size: 40px;
+  }
